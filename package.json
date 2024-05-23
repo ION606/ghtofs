@@ -12,5 +12,11 @@
     "axios": "^1.7.2",
     "base-64": "^1.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "keywords": [
+    "github",
+    "fs",
+    "filesystem",
+    "files"
+  ]
 }

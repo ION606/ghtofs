@@ -42,7 +42,7 @@ class ghelper {
         }
     }
 
-    async addToRepo(fpath, contentRaw, sha = undefined) {
+    async addToRepo(fpath, contentRaw, sha = undefined, commit_message = undefined) {
         try {
             const url = `${this.ghurl}/contents/${fpath}`;
 
@@ -50,7 +50,7 @@ class ghelper {
             const toAdd = content.toString('base64');
             // Prepare the commit
             const updateData = {
-                message: `added content for ${fpath}`,
+                message: (commit_message) ? commit_message : `added content for ${fpath}`,
                 content: toAdd,
             };
 
@@ -233,17 +233,17 @@ export default class customFs {
      * @param {{encoding:string}} opts?
      * @returns 
      */
-    async writeFileSync(fPath, toWriteRaw, opts = undefined) {
+    async writeFileSync(fPath, toWriteRaw, opts = undefined, commit_message = undefined) {
         // { encoding: 'base64' }
         const encoding = opts?.encoding;
         const toWrite = (encoding) ? Buffer.from(toWriteRaw).toString(encoding) : toWriteRaw;
 
         const r = await this.existsSync(fPath);
         await wait(1000);
-        return this.ghs.addToRepo(fPath, toWrite, r);
+        return this.ghs.addToRepo(fPath, toWrite, r, commit_message);
     }
 
-    writeFile = (fName, toWrite, cb) => this.writeFileSync(fName, toWrite).then(() => cb()).catch(cb);
+    writeFile = (fName, toWrite, cb, opts, commit_message = undefined) => this.writeFileSync(fName, toWrite, opts, commit_message).then(() => cb()).catch(cb);
 
 
     readFileSync = async (fName) => this.ghs.getStructure(fName);

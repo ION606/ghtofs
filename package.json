@@ -1,6 +1,6 @@
 {
   "name": "github-to-fs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a package that allows you to use github like file storage",
   "main": "index.js",
   "scripts": {

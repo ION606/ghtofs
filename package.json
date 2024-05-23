@@ -2,7 +2,7 @@
   "name": "github-to-fs",
   "version": "1.0.2",
   "description": "a package that allows you to use github like file storage",
-  "main": "customFileSystem.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,8 @@
     "fs",
     "filesystem",
     "files"
-  ]
+  ],
+  "devDependencies": {
+    "@types/node": "^20.12.12"
+  }
 }

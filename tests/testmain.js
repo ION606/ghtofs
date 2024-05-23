@@ -1,4 +1,4 @@
-import customFs from "../customFileSystem";
+import customFs from "..";
 import fs from 'fs';
 const { token } = JSON.parse(fs.readFileSync('config.json'));
 

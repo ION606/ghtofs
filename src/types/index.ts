@@ -1,3 +1,5 @@
+declare module 'github-to-fs';
+
 type AuthHeaders = {
     'Authorization': string;
 };

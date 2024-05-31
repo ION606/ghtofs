@@ -4,7 +4,7 @@
   "description": "a package that allows you to use github like file storage",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/testmain.js"
   },
   "author": "ION606",
   "license": "ISC",
@@ -13,6 +13,10 @@
     "base-64": "^1.0.0"
   },
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ION606/github-to-fs/"
+  },
   "keywords": [
     "github",
     "fs",
